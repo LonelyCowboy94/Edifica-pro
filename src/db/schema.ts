@@ -27,10 +27,11 @@ export const workers = pgTable("workers", {
   firstName: text("first_name").notNull(),
   lastName: text("last_name").notNull(),
   email: text("email"),
+  phone: text("phone"), 
   position: text("position").notNull(),
   joinedAt: timestamp("joined_at").defaultNow().notNull(),
   contractType: text("contract_type").$type<"permanent" | "limited">().notNull(),
-  contractUntil: timestamp("contract_until"), // Null if permanent
+  contractUntil: timestamp("contract_until"),
   bankAccount: text("bank_account").notNull(),
   hourlyRate: numeric("hourly_rate", { precision: 10, scale: 2 }).notNull(),
   currency: text("currency").default("EUR").notNull(),

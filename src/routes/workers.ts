@@ -6,10 +6,9 @@ import { eq, and } from "drizzle-orm";
 
 export const workerRouter = Router();
 
-/**
- * GET /workers
- * Retrieves all workers belonging to the authenticated user's company.
- */
+
+// GET workers
+
 workerRouter.get("/", authenticate, async (req: any, res) => {
   try {
     const data = await db.select()
@@ -23,19 +22,18 @@ workerRouter.get("/", authenticate, async (req: any, res) => {
   }
 });
 
-/**
- * POST /workers
- * Creates a new worker. Handles string-to-date conversion for Drizzle.
- */
+
+// POST workers
+ 
 workerRouter.post("/", authenticate, async (req: any, res) => {
   try {
     const { 
-      firstName, lastName, email, position, 
-      joinedAt, contractType, contractUntil, 
+      firstName, lastName, email, 
+      phone,
+      position, joinedAt, contractType, contractUntil, 
       bankAccount, hourlyRate, currency 
     } = req.body;
 
-    // Convert date strings to JavaScript Date objects for Drizzle timestamp compatibility
     const formattedJoinedAt = joinedAt ? new Date(joinedAt) : new Date();
     const formattedContractUntil = contractUntil ? new Date(contractUntil) : null;
 
@@ -44,6 +42,7 @@ workerRouter.post("/", authenticate, async (req: any, res) => {
       firstName,
       lastName,
       email,
+      phone, 
       position,
       joinedAt: formattedJoinedAt,
       contractType,
@@ -60,16 +59,14 @@ workerRouter.post("/", authenticate, async (req: any, res) => {
   }
 });
 
-/**
- * PUT /workers/:id
- * Updates an existing worker's data.
- */
+// PUT /workers/:id
+ 
 workerRouter.put("/:id", authenticate, async (req: any, res) => {
   try {
-    // 1. Destrukturiramo podatke tako da IZBACIMO id i companyId iz update objekta
+    // 1. Destructure data and REMOVE id and companyId from the update object
     const { id, companyId, createdAt, ...updateData } = req.body;
 
-    // 2. Konverzija datuma (samo za polja koja ostaju u updateData)
+    // 2. Date conversion (only for fields that remain in updateData)
     if (updateData.joinedAt) {
       updateData.joinedAt = new Date(updateData.joinedAt);
     }
@@ -77,13 +74,13 @@ workerRouter.put("/:id", authenticate, async (req: any, res) => {
     if (updateData.contractType === "permanent") {
       updateData.contractUntil = null;
     } else if (updateData.contractUntil) {
-      // Provera da string nije prazan pre konverzije
+      // Check that the string is not empty before conversion
       updateData.contractUntil = new Date(updateData.contractUntil);
     }
 
-    // 3. Izvršavanje update-a
+    // 3. Execute update
     const updated = await db.update(workers)
-      .set(updateData) // Šaljemo očišćene podatke bez ID-a
+      .set(updateData) // Send sanitized data without ID
       .where(and(
         eq(workers.id, req.params.id), 
         eq(workers.companyId, req.user.companyId)
@@ -96,16 +93,15 @@ workerRouter.put("/:id", authenticate, async (req: any, res) => {
 
     res.json(updated[0]);
   } catch (error) {
-    // Ovo će ispisati tačan razlog u terminalu tvog backend-a
+    // This will print the exact error reason in your backend terminal
     console.error("PUT worker error details:", error);
     res.status(500).json({ error: "Failed to update worker" });
   }
 });
 
-/**
- * DELETE /workers/:id
- * Removes a worker from the system.
- */
+
+// DELETE /workers/:id
+
 workerRouter.delete("/:id", authenticate, async (req: any, res) => {
   try {
     const result = await db.delete(workers)

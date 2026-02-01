@@ -8,10 +8,10 @@ const LIMITS = { FREE: 3, STANDARD: 10, PRO: 30, ENTERPRISE: 50 };
 export const checkTierLimit = async (req: any, res: Response, next: NextFunction) => {
   const companyId = req.user.companyId;
 
-  // Dohvati firmu da vidiš koji je paket
+  // Fetch company and check subscription
   const [company] = await db.select().from(companies).where(eq(companies.id, companyId));
   
-  // Izbroj radnike
+  // Count workers
   const [workerCount] = await db.select({ value: count() }).from(workers).where(eq(workers.companyId, companyId));
 
   if (workerCount.value >= LIMITS[company.tier as keyof typeof LIMITS]) {
