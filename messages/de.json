@@ -20,9 +20,9 @@
     "cta_secondary": "Demo ansehen"
   },
   "Pricing": {
-    "title": "Einfache Tarife für jedes Team",
-    "subtitle": "Wählen Sie den Plan, der am besten zu Ihrem Unternehmen passt.",
-    "cta": "Tarif auswählen",
+    "title": "Einfache Pläne für jedes Team",
+    "subtitle": "Wählen Sie das Paket, das am besten zu Ihrem Unternehmen passt.",
+    "cta": "Paket auswählen",
     "features": {
       "workers": "Mitarbeiter",
       "admins": "Administratoren",
@@ -44,7 +44,7 @@
     "login_button": "Anmelden",
     "register_button": "Kostenlos starten",
     "no_account": "Noch kein Konto? Jetzt registrieren",
-    "error_invalid": "Falsche E-Mail oder Passwort"
+    "error_invalid": "Falsche E-Mail oder falsches Passwort"
   },
   "Dashboard": {
     "title": "Dashboard",
@@ -52,13 +52,114 @@
     "nav": {
       "projects": "Projekte",
       "workers": "Mitarbeiter",
+      "clients": "Kunden",
+      "karnet": "Arbeitsnachweis",
       "pricing": "Preisliste",
-      "karnet": "Arbeitsnachweis"
+      "finances": "Finanzen"
+    },
+    "stats": {
+      "active_workers": "Aktive Mitarbeiter",
+      "open_projects": "Offene Projekte",
+      "last_quote": "Letztes Angebot",
+      "total_clients": "Gesamtzahl der Kunden"
     },
     "user_menu": {
       "account": "Mein Konto",
       "settings": "Einstellungen",
       "logout": "Abmelden"
+    }
+  },
+  "Clients": {
+    "clients_title": "Kunden",
+    "clients_subtitle": "Verwalten Sie Ihre Liste von Investoren und Projektinhabern.",
+    "add_client": "Kunden hinzufügen",
+    "search_clients": "Suche nach Name, E-Mail oder Adresse...",
+    "client_name": "Kundenname",
+    "contact_info": "Kontaktinformationen",
+    "address": "Adresse",
+    "actions": "Aktionen",
+    "no_clients": "Keine Kunden gefunden.",
+    "new_client": "Neuer Kunde",
+    "edit_client": "Kunden bearbeiten",
+    "save_client": "Kunden speichern",
+    "cancel": "Abbrechen",
+    "phone": "Telefon",
+    "confirm_delete_client": "Möchten Sie diesen Kunden wirklich löschen?",
+    "error_load_clients": "Fehler beim Laden der Kunden.",
+    "error_save_client": "Beim Speichern des Kunden ist ein Fehler aufgetreten.",
+    "error_delete_client": "Der Kunde konnte nicht gelöscht werden."
+  },
+  "Projects": {
+    "projects_test_title": "Datenbanktest: Projekte",
+    "loading": "Projekte werden geladen...",
+    "no_projects": "Keine Projekte gefunden oder werden geladen...",
+    "no_client": "Kein Kunde"
+  },
+
+  "Workers": {
+    "title": "Mitarbeiter",
+    "subtitle": "Verwaltung von Mitarbeitern, Gehältern und Verträgen.",
+    "addWorker": "Mitarbeiter hinzufügen",
+    "searchPlaceholder": "Nach Name oder Position suchen...",
+    "newWorker": "Neuer Mitarbeiter",
+    "editWorker": "Mitarbeiter bearbeiten",
+    "confirmDelete": "Sind Sie sicher, dass Sie diesen Mitarbeiter löschen möchten?",
+    "table": {
+      "name": "Name",
+      "position": "Position",
+      "rate": "Stundensatz",
+      "contract": "Vertragsstatus",
+      "actions": "Aktionen",
+      "no_email": "Keine E-Mail",
+      "no_phone": "Keine Telefonnummer",
+      "rate_account": "Verdienst & Konto",
+    "no_info": "Keine Info",
+    "edit": "Bearbeiten",
+"delete": "Löschen",
+"no_results": "Keine Ergebnisse"
+    },
+    "form": {
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "position": "Position",
+      "hourlyRate": "Stundensatz",
+      "cancel": "Abbrechen",
+      "save": "Speichern",
+      "contractType": "Vertragsart",
+      "permanent": "Unbefristet",
+      "limited": "Befristet",
+      "contractUntil": "Vertrag bis",
+      "currency": "Währung"
+    },
+    "notifications": {
+      "expired": "ABGELAUFEN ({date})",
+      "expiring_soon": "Läuft bald ab ({date})"
+    },
+    "modal": {
+      "title_new": "Neuer Mitarbeiter",
+      "title_edit": "Daten bearbeiten",
+      "placeholder_firstName": "Vorname",
+      "placeholder_lastName": "Nachname",
+      "placeholder_position": "Position",
+      "placeholder_hourlyRate": "Stundensatz",
+      "select_contractType": "Vertragsart",
+      "select_currency": "Währung",
+      "button_cancel": "Abbrechen",
+      "button_save": "Speichern",
+      "option_permanent": "Unbefristet",
+      "option_limited": "Befristet",
+      "label_email": "E-Mail",
+      "placeholder_email": "Beispiel: john@firma.de",
+      "label_phone": "Telefon",
+      "placeholder_phone": "+49 170 1234567",
+      "label_firstName": "Vorname",
+      "label_lastName": "Nachname",
+      "label_position": "Position",
+      "label_contractType": "Vertragsart",
+      "label_contractUntil": "Vertrag bis",
+      "label_hourlyRate": "Stundensatz",
+      "label_currency": "Währung",
+      "label_bankAccount": "Bankkonto (IBAN)"
     }
   }
 }

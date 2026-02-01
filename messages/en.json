@@ -2,30 +2,30 @@
   "Index": {
     "title": "The Future of Construction Site Management",
     "description": "A professional tool for managing construction companies, price lists, and workforce in one place.",
-    "cta": "Get Started for Free",
-    "login": "Log in"
+    "cta": "Start for free",
+    "login": "Login"
   },
   "Navbar": {
     "features": "Features",
     "pricing": "Pricing",
     "contact": "Contact",
-    "login": "Log in",
+    "login": "Login",
     "register": "Register"
   },
   "Hero": {
-    "tagline": "Available for Serbia, Germany, and the EU",
+    "tagline": "Available for Serbia, Germany and the EU",
     "title": "An All-in-One Solution for Modern Construction Companies",
     "subtitle": "Manage projects, workers, and accurate price lists in one place. Professional, digital, and secure.",
-    "cta_primary": "Start for Free",
-    "cta_secondary": "View Demo"
+    "cta_primary": "Start for free",
+    "cta_secondary": "View demo"
   },
   "Pricing": {
     "title": "Simple Plans for Every Team",
-    "subtitle": "Choose the plan that best fits your business scale.",
-    "cta": "Choose a Plan",
+    "subtitle": "Choose the package that best fits your business scale.",
+    "cta": "Choose plan",
     "features": {
       "workers": "workers",
-      "admins": "admins",
+      "admins": "administrators",
       "price_lists": "Custom price lists"
     },
     "plans": {
@@ -38,12 +38,12 @@
   "Auth": {
     "login_title": "System Login",
     "register_title": "Company Registration",
-    "company_name": "Company Name",
-    "email": "Email Address",
+    "company_name": "Company name",
+    "email": "Email address",
     "password": "Password",
     "login_button": "Log in",
-    "register_button": "Start for Free",
-    "no_account": "Don’t have an account? Register",
+    "register_button": "Start for free",
+    "no_account": "Don't have an account? Register",
     "error_invalid": "Invalid email or password"
   },
   "Dashboard": {
@@ -52,13 +52,115 @@
     "nav": {
       "projects": "Projects",
       "workers": "Workers",
+      "clients": "Clients",
+      "karnet": "Work Log",
       "pricing": "Price List",
-      "karnet": "Work Log"
+      "finances": "Finances"
+    },
+    "stats": {
+      "active_workers": "Active workers",
+      "open_projects": "Open projects",
+      "last_quote": "Latest quote",
+      "total_clients": "Total clients"
     },
     "user_menu": {
-      "account": "My Account",
+      "account": "My account",
       "settings": "Settings",
       "logout": "Log out"
     }
+  },
+  "Clients": {
+  "clients_title": "Clients",
+  "clients_subtitle": "Manage your list of investors and project owners.",
+  "add_client": "Add client",
+  "search_clients": "Search by name, email, or address...",
+  "client_name": "Client name",
+  "contact_info": "Contact information",
+  "address": "Address",
+  "actions": "Actions",
+  "no_clients": "No clients found.",
+  "new_client": "New client",
+  "edit_client": "Edit client",
+  "save_client": "Save client",
+  "cancel": "Cancel",
+  "phone": "Phone",
+  "confirm_delete_client": "Are you sure you want to delete this client?",
+  "error_load_clients": "Failed to load clients.",
+  "error_save_client": "An error occurred while saving the client.",
+  "error_delete_client": "Failed to delete the client."
+},
+"Projects": {
+    "projects_test_title": "Database Test: Projects",
+    "loading": "Loading projects...",
+    "no_projects": "No projects found or still loading...",
+    "no_client": "No client"
+  },
+ "Workers": {
+    "title": "Workers",
+    "subtitle": "Manage employees, salaries, and contracts.",
+    "addWorker": "Add Worker",
+    "searchPlaceholder": "Search by name or position...",
+    "newWorker": "New Worker",
+    "editWorker": "Edit Worker",
+    "confirmDelete": "Are you sure you want to delete this worker?",
+    "table": {
+      "name": "Full Name",
+      "position": "Position",
+      "rate": "Hourly Rate",
+      "contract": "Contract Status",
+      "actions": "Actions",
+      "no_email": "No email",
+      "no_phone": "No phone",
+      "rate_account": "Earnings & Account",
+    "no_info": "No info",
+    "edit": "Edit",
+"delete": "Delete",
+"no_results": "No results"
+    },
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "position": "Position",
+      "hourlyRate": "Hourly Rate",
+      "cancel": "Cancel",
+      "save": "Save",
+      "contractType": "Contract Type",
+      "permanent": "Permanent",
+      "limited": "Limited",
+      "contractUntil": "Contract Until",
+      "currency": "Currency"
+    },
+    "notifications": {
+      "expired": "EXPIRED ({date})",
+      "expiring_soon": "Expiring Soon ({date})"
+    },
+  "modal": {
+  "title_new": "New Worker",
+  "title_edit": "Edit Worker",
+  "placeholder_firstName": "First Name",
+  "placeholder_lastName": "Last Name",
+  "placeholder_position": "Position",
+  "placeholder_hourlyRate": "Hourly Rate",
+  "select_contractType": "Contract Type",
+  "select_currency": "Currency",
+  "button_cancel": "Cancel",
+  "button_save": "Save",
+  "option_permanent": "Permanent",
+  "option_limited": "Limited",
+  "label_email": "Email",
+  "placeholder_email": "Example: john@company.com",
+  "label_phone": "Phone",
+  "placeholder_phone": "+1 555 123 4567",
+  "label_firstName": "First Name",
+  "label_lastName": "Last Name",
+  "label_position": "Position",
+  "label_contractType": "Contract Type",
+  "label_contractUntil": "Contract Until",
+  "label_hourlyRate": "Hourly Rate",
+  "label_currency": "Currency",
+  "label_bankAccount": "Bank Account (IBAN)"
+}
+
   }
+
 }

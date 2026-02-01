@@ -51,32 +51,116 @@
     "welcome": "Dobrodošli nazad",
     "nav": {
       "projects": "Projekti",
-      "workers": "Radnici",
-      "pricing": "Cenovnik",
-      "karnet": "Karnet"
-    },
-    "user_menu": {
-      "account": "Moj nalog",
-      "settings": "Podešavanja",
-      "logout": "Odjavi se"
-    },
-    "Dashboard": {
-  "title": "Kontrolna tabla",
-  "welcome": "Dobrodošli nazad",
-  "stats": {
-    "active_workers": "Aktivni radnici",
-    "open_projects": "Otvoreni projekti",
-    "last_quote": "Poslednja ponuda",
-    "total_clients": "Ukupno klijenata"
-  },
-  "nav": {
-    "projects": "Projekti",
     "workers": "Radnici",
     "clients": "Klijenti",
     "karnet": "Karnet",
     "pricing": "Cenovnik",
     "finances": "Finansije"
+    },
+    "stats": {
+    "active_workers": "Aktivni radnici",
+    "open_projects": "Otvoreni projekti",
+    "last_quote": "Poslednja ponuda",
+    "total_clients": "Ukupno klijenata"
+  },
+    "user_menu": {
+      "account": "Moj nalog",
+      "settings": "Podešavanja",
+      "logout": "Odjavi se"
+    }
+  },
+  "Clients": {
+  "clients_title": "Klijenti",
+  "clients_subtitle": "Upravljajte listom investitora i vlasnika projekata.",
+  "add_client": "Dodaj klijenta",
+  "search_clients": "Pretraga po imenu, emailu ili adresi...",
+  "client_name": "Naziv klijenta",
+  "contact_info": "Kontakt podaci",
+  "address": "Adresa",
+  "actions": "Akcije",
+  "no_clients": "Nema pronađenih klijenata.",
+  "new_client": "Novi klijent",
+  "edit_client": "Izmeni klijenta",
+  "save_client": "Sačuvaj klijenta",
+  "cancel": "Otkaži",
+  "phone": "Telefon",
+  "confirm_delete_client": "Da li ste sigurni da želite da obrišete ovog klijenta?",
+  "error_load_clients": "Greška pri učitavanju klijenata.",
+  "error_save_client": "Došlo je do greške prilikom čuvanja klijenta.",
+  "error_delete_client": "Brisanje klijenta nije uspelo."
+},
+
+  "Projects": {
+    "projects_test_title": "Test Baze: Projekti",
+    "loading": "Učitavanje projekata...",
+    "no_projects": "Nema projekata ili se učitavaju...",
+    "no_client": "Nema klijenta"
+  },
+ "Workers": {
+  "title": "Radnici",
+  "subtitle": "Upravljanje zaposlenima, platama i ugovorima.",
+  "addWorker": "Dodaj radnika",
+  "searchPlaceholder": "Pretraži po imenu ili poziciji...",
+  "newWorker": "Novi radnik",
+  "editWorker": "Izmeni radnika",
+  "confirmDelete": "Da li ste sigurni da želite da obrišete radnika?",
+  "table": {
+    "name": "Ime i prezime",
+    "position": "Pozicija",
+    "rate": "Satnica",
+    "contract": "Status ugovora",
+    "actions": "Akcije",
+    "no_email": "Bez email adrese",
+    "no_phone": "Bez telefona",
+    "rate_account": "Zarada i račun",
+    "no_info": "Nema podataka",
+    "edit": "Izmeni",
+    "delete": "Obriši",
+    "no_results": "Nema rezultata"
+  },
+  "form": {
+    "firstName": "Ime",
+    "lastName": "Prezime",
+    "position": "Radno mesto",
+    "hourlyRate": "Cena po satu",
+    "cancel": "Odustani",
+    "save": "Sačuvaj",
+    "contractType": "Tip ugovora",
+    "permanent": "Na neodređeno",
+    "limited": "Ograničen trajanje",
+    "contractUntil": "Ugovor do",
+    "currency": "Valuta"
+  },
+  "notifications": {
+    "expired": "ISTEKLO ({date})",
+    "expiring_soon": "Ističe uskoro ({date})"
+  },
+  "modal": {
+    "title_new": "Novi radnik",
+    "title_edit": "Izmeni podatke",
+    "placeholder_firstName": "Ime",
+    "placeholder_lastName": "Prezime",
+    "placeholder_position": "Pozicija",
+    "placeholder_hourlyRate": "Cena po satu",
+    "select_contractType": "Tip ugovora",
+    "select_currency": "Valuta",
+    "button_cancel": "Odustani",
+    "button_save": "Sačuvaj",
+    "option_permanent": "Na neodređeno",
+    "option_limited": "Ograničen trajanje",
+    "label_email": "Email adresa",
+    "placeholder_email": "Primer: petar@firma.rs",
+    "label_phone": "Kontakt telefon",
+    "placeholder_phone": "+381 60 123 4567",
+    "label_firstName": "Ime",
+    "label_lastName": "Prezime",
+    "label_position": "Pozicija",
+    "label_contractType": "Tip ugovora",
+    "label_contractUntil": "Ugovor do",
+    "label_hourlyRate": "Cena po radnom satu",
+    "label_currency": "Valuta",
+    "label_bankAccount": "Bankovni račun (IBAN)"
+    
   }
 }
-  }
 }

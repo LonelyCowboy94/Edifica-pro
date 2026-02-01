@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
-import { Check } from "lucide-react"; // npm install lucide-react ako nisi
+import { Check } from "lucide-react"; 
 
 export default function Pricing() {
   const t = useTranslations("Pricing");
