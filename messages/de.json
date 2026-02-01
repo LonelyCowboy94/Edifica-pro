@@ -1,0 +1,64 @@
+{
+  "Index": {
+    "title": "Die Zukunft des Baustellenmanagements",
+    "description": "Ein professionelles Tool zur Verwaltung von Bauunternehmen, Preislisten und Arbeitskräften an einem Ort.",
+    "cta": "Kostenlos starten",
+    "login": "Anmelden"
+  },
+  "Navbar": {
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "contact": "Kontakt",
+    "login": "Anmelden",
+    "register": "Registrieren"
+  },
+  "Hero": {
+    "tagline": "Verfügbar für Serbien, Deutschland und die EU",
+    "title": "Die Komplettlösung für moderne Bauunternehmen",
+    "subtitle": "Verwalten Sie Projekte, Mitarbeiter und präzise Preislisten an einem Ort. Professionell, digital und sicher.",
+    "cta_primary": "Kostenlos starten",
+    "cta_secondary": "Demo ansehen"
+  },
+  "Pricing": {
+    "title": "Einfache Tarife für jedes Team",
+    "subtitle": "Wählen Sie den Plan, der am besten zu Ihrem Unternehmen passt.",
+    "cta": "Tarif auswählen",
+    "features": {
+      "workers": "Mitarbeiter",
+      "admins": "Administratoren",
+      "price_lists": "Individuelle Preislisten"
+    },
+    "plans": {
+      "free": { "name": "Kostenlos" },
+      "small": { "name": "Kleines Team" },
+      "medium": { "name": "Mittleres Team" },
+      "enterprise": { "name": "Unternehmen" }
+    }
+  },
+  "Auth": {
+    "login_title": "Systemanmeldung",
+    "register_title": "Firmenregistrierung",
+    "company_name": "Firmenname",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "login_button": "Anmelden",
+    "register_button": "Kostenlos starten",
+    "no_account": "Noch kein Konto? Jetzt registrieren",
+    "error_invalid": "Falsche E-Mail oder Passwort"
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "welcome": "Willkommen zurück",
+    "nav": {
+      "projects": "Projekte",
+      "workers": "Mitarbeiter",
+      "pricing": "Preisliste",
+      "karnet": "Arbeitsnachweis"
+    },
+    "user_menu": {
+      "account": "Mein Konto",
+      "settings": "Einstellungen",
+      "logout": "Abmelden"
+    }
+  }
+}

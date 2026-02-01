@@ -1,0 +1,64 @@
+{
+  "Index": {
+    "title": "The Future of Construction Site Management",
+    "description": "A professional tool for managing construction companies, price lists, and workforce in one place.",
+    "cta": "Get Started for Free",
+    "login": "Log in"
+  },
+  "Navbar": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "login": "Log in",
+    "register": "Register"
+  },
+  "Hero": {
+    "tagline": "Available for Serbia, Germany, and the EU",
+    "title": "An All-in-One Solution for Modern Construction Companies",
+    "subtitle": "Manage projects, workers, and accurate price lists in one place. Professional, digital, and secure.",
+    "cta_primary": "Start for Free",
+    "cta_secondary": "View Demo"
+  },
+  "Pricing": {
+    "title": "Simple Plans for Every Team",
+    "subtitle": "Choose the plan that best fits your business scale.",
+    "cta": "Choose a Plan",
+    "features": {
+      "workers": "workers",
+      "admins": "admins",
+      "price_lists": "Custom price lists"
+    },
+    "plans": {
+      "free": { "name": "Free" },
+      "small": { "name": "Small Team" },
+      "medium": { "name": "Medium Team" },
+      "enterprise": { "name": "Enterprise" }
+    }
+  },
+  "Auth": {
+    "login_title": "System Login",
+    "register_title": "Company Registration",
+    "company_name": "Company Name",
+    "email": "Email Address",
+    "password": "Password",
+    "login_button": "Log in",
+    "register_button": "Start for Free",
+    "no_account": "Don’t have an account? Register",
+    "error_invalid": "Invalid email or password"
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back",
+    "nav": {
+      "projects": "Projects",
+      "workers": "Workers",
+      "pricing": "Price List",
+      "karnet": "Work Log"
+    },
+    "user_menu": {
+      "account": "My Account",
+      "settings": "Settings",
+      "logout": "Log out"
+    }
+  }
+}

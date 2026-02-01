@@ -1,0 +1,82 @@
+{
+  "Index": {
+    "title": "Budućnost upravljanja gradilištem",
+    "description": "Profesionalni alat za vođenje građevinskih firmi, cenovnika i radne snage na jednom mestu.",
+    "cta": "Započnite besplatno",
+    "login": "Prijava"
+  },
+  "Navbar": {
+    "features": "Funkcije",
+    "pricing": "Cenovnik",
+    "contact": "Kontakt",
+    "login": "Prijava",
+    "register": "Registracija"
+  },
+  "Hero": {
+    "tagline": "Dostupno za Srbiju, Nemačku i EU",
+    "title": "Sveobuhvatno rešenje za moderna građevinska preduzeća",
+    "subtitle": "Upravljajte projektima, radnicima i preciznim cenovnicima na jednom mestu. Profesionalno, digitalno i sigurno.",
+    "cta_primary": "Započni besplatno",
+    "cta_secondary": "Pogledaj demo"
+  },
+  "Pricing": {
+    "title": "Jednostavni planovi za svaki tim",
+    "subtitle": "Izaberite paket koji najbolje odgovara vašem obimu poslovanja.",
+    "cta": "Izaberi paket",
+    "features": {
+      "workers": "radnika",
+      "admins": "administratora",
+      "price_lists": "Custom cenovnici"
+    },
+    "plans": {
+      "free": { "name": "Besplatno" },
+      "small": { "name": "Mali Tim" },
+      "medium": { "name": "Srednji Tim" },
+      "enterprise": { "name": "Preduzeće" }
+    }
+  }, 
+  "Auth": {
+    "login_title": "Prijava na sistem",
+    "register_title": "Registracija firme",
+    "company_name": "Naziv firme",
+    "email": "Email adresa",
+    "password": "Lozinka",
+    "login_button": "Prijavi se",
+    "register_button": "Započni besplatno",
+    "no_account": "Nemate nalog? Registrujte se",
+    "error_invalid": "Pogrešan email ili lozinka"
+  },
+  "Dashboard": {
+    "title": "Kontrolna tabla",
+    "welcome": "Dobrodošli nazad",
+    "nav": {
+      "projects": "Projekti",
+      "workers": "Radnici",
+      "pricing": "Cenovnik",
+      "karnet": "Karnet"
+    },
+    "user_menu": {
+      "account": "Moj nalog",
+      "settings": "Podešavanja",
+      "logout": "Odjavi se"
+    },
+    "Dashboard": {
+  "title": "Kontrolna tabla",
+  "welcome": "Dobrodošli nazad",
+  "stats": {
+    "active_workers": "Aktivni radnici",
+    "open_projects": "Otvoreni projekti",
+    "last_quote": "Poslednja ponuda",
+    "total_clients": "Ukupno klijenata"
+  },
+  "nav": {
+    "projects": "Projekti",
+    "workers": "Radnici",
+    "clients": "Klijenti",
+    "karnet": "Karnet",
+    "pricing": "Cenovnik",
+    "finances": "Finansije"
+  }
+}
+  }
+}
