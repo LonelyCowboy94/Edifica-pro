@@ -1,0 +1,3 @@
+{
+  "LIMIT_REACHED": "Dostigli ste maksimalan broj radnika ({{limit}}) za paket {{tier}}."
+}
