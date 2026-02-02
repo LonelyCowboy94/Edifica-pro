@@ -1,4 +1,4 @@
-import { pgTable, text, numeric, timestamp, doublePrecision, uuid, pgEnum } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, boolean, integer, numeric, timestamp, doublePrecision, uuid, pgEnum } from "drizzle-orm/pg-core";
 
 export const tierEnum = pgEnum("tier", ["FREE", "STANDARD", "PRO", "ENTERPRISE"]);
 export const roleEnum = pgEnum("role", ["OWNER", "ADMIN", "FOREMAN"]);
@@ -57,4 +57,46 @@ export const projects = pgTable("projects", {
   status: text("status").default("OPEN").notNull(),
   companyId: uuid("company_id").references(() => companies.id).notNull(),
   createdAt: timestamp("created_at").defaultNow(),
+});
+
+// Pricing lists
+
+// 1. Podržane države
+export const countries = pgTable("countries", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(), // "Srbija", "Nemačka"
+  code: text("code").notNull(), // "SRB", "DE"
+});
+
+// 2. Regioni (Vojvodina, Bavarska...)
+export const regions = pgTable("regions", {
+  id: serial("id").primaryKey(),
+  countryId: integer("country_id").references(() => countries.id, { onDelete: 'cascade' }), // Dodaj ovo
+  name: text("name").notNull(),
+});
+
+// 3. Master Cenovnici (vodi ih Super Admin)
+export const masterPriceLists = pgTable("master_price_lists", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  regionId: integer("region_id").references(() => regions.id, { onDelete: 'cascade' }), // OBAVEZNO OVO
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
+// 4. Kategorije radova (Zemljani, Grubi, Moleraj...)
+export const priceCategories = pgTable("price_categories", {
+  id: serial("id").primaryKey(),
+  masterPriceListId: integer("master_price_list_id").references(() => masterPriceLists.id, { onDelete: 'cascade' }), // OBAVEZNO OVO
+  name: text("name").notNull(),
+  order: integer("order").default(0),
+});
+
+// 5. Stavke cenovnika (Konkretni radovi)
+export const priceItems = pgTable("price_items", {
+  id: serial("id").primaryKey(),
+  categoryId: integer("category_id").references(() => priceCategories.id, { onDelete: 'cascade' }), // OBAVEZNO OVO
+  description: text("description").notNull(),
+  unit: text("unit").notNull(),
+  price: doublePrecision("price").notNull(),
+  currency: text("currency").default("EUR"),
 });

@@ -5,6 +5,7 @@ import { authRouter } from './routes/auth';
 import { workerRouter } from './routes/workers';
 import { clientRouter } from './routes/clients';
 import { projectRouter } from './routes/projects';
+import priceRoutes from "./routes/pricesUpdate";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/workers', workerRouter);
 app.use('/api/clients', clientRouter);
 app.use('/api/projects', projectRouter);
+app.use("/api/prices", priceRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
