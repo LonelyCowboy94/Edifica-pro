@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "country-flag-icons": "^1.6.12",
+    "react-flag-kit": "^1.1.1"
+  }
+}
