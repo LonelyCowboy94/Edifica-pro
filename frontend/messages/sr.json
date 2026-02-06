@@ -1,0 +1,219 @@
+{
+  "Countries": { "country_rs": "Srbija",
+  "country_hr": "Hrvatska",
+  "country_ba": "Bosna i Hercegovina",
+  "country_me": "Crna Gora",
+  "country_si": "Slovenija",
+  "country_de": "Nemačka",
+  "country_at": "Austrija",
+  "country_ch": "Švajcarska",
+  "country_nl": "Holandija",
+  "country_dk": "Danska",
+  "country_se": "Švedska",
+  "country_no": "Norveška",
+  "country_gb": "Ujedinjeno Kraljevstvo"
+},
+  "Index": {
+    "title": "Budućnost upravljanja gradilištem",
+    "description": "Profesionalni alat za vođenje građevinskih firmi, cenovnika i radne snage na jednom mestu.",
+    "cta": "Započnite besplatno",
+    "login": "Prijava"
+  },
+  "Navbar": {
+    "features": "Funkcije",
+    "pricing": "Cenovnik",
+    "contact": "Kontakt",
+    "login": "Prijava",
+    "register": "Registracija"
+  },
+  "Hero": {
+    "tagline": "Dostupno za Balkan, Nemačku i EU",
+    "title": "Sveobuhvatno rešenje za moderna građevinska preduzeća",
+    "subtitle": "Upravljajte projektima, radnicima i preciznim cenovnicima na jednom mestu. Profesionalno, digitalno i sigurno.",
+    "cta_primary": "Započni besplatno",
+    "cta_secondary": "Pogledaj demo"
+  },
+  "Pricing": {
+    "title": "Jednostavni planovi za svaki tim",
+    "subtitle": "Izaberite paket koji najbolje odgovara vašem obimu poslovanja.",
+    "cta": "Izaberi paket",
+    "features": {
+      "workers": "radnika",
+      "admins": "administratora",
+      "price_lists": "Custom cenovnici"
+    },
+    "plans": {
+      "free": { "name": "Besplatno" },
+      "small": { "name": "Mali Tim" },
+      "medium": { "name": "Srednji Tim" },
+      "enterprise": { "name": "Preduzeće" }
+    }
+  }, 
+  "Auth": {
+    "loading": "Učitavam...",
+    "login_title": "Prijava na sistem",
+    "welcome_message": "Dobrodošli nazad u Edifica Pro sistem.",
+    "register_title": "Registracija firme",
+    "register_subtitle": "Kreirajte nalog za Vašu firmu i započnite digitalnu transformaciju gradilišta.",
+    "company_name": "Naziv firme",
+    "company_name_placeholder": "Npr. Edifica Construction d.o.o.",
+    "email": "Email adresa",
+    "email_placeholder_example": "primer@firma.rs",
+    "password": "Lozinka",
+    "confirm_password": "Potvrdite lozinku",
+    "passwords_dont_match": "Lozinke se ne podudaraju.",
+    "login_button": "Prijavite se",
+    "register_button": "Započni besplatno",
+    "button_next": "Nastavi",
+    "button_back": "Nazad",
+  "button_finish": "Završi Registraciju",
+  "register_step2_title": "PRILAGODI PROSTOR",
+  "register_step2_subtitle": "Odaberite paket i region poslovanja",
+   "register_region_label": "Region Poslovanja",
+     "register_tier_label": "Odaberite Paket Usluga",
+    "no_account": "Nemate nalog?",
+    "already_have_account": "Već imate nalog?",
+    "register_cta": "Registujte se",
+    "error_invalid": "Pogrešan email ili lozinka",
+    "error_email_required": "Email adresa je obavezna",
+    "error_company_required": "Ime firme je obavezno",
+"error_password_required": "Lozinka je obavezna",
+"error_email_format": "Unesite ispravnu email adresu"
+  },
+  "Prices": {
+    "title": "Moji Cenovnici",
+    "subtitle": "Upravljanje registrima cena",
+    "create_new_list": "Kreiraj novi cenovnik",
+    "import_from_master": "Uvezi iz Mastera",
+    "my_registries": "Moji registri",
+    "active": "VAŽEĆI",
+    "import_title": "Uvoz Master Cenovnika",
+    "select_country": "Izaberi državu",
+    "select_market": "Izaberi region",
+    "choose": "Odaberi...",
+    "confirm_import": "Potvrdi Uvoz",
+    "no_list_selected": "Nema izabranog cenovnika",
+    "select_or_import_hint": "Izaberi cenovnik iz liste ili uvezi novi iz Master registra.",
+    "prompt_list_name": "Unesite naziv novog cenovnika:",
+    "workspace_active": "Radni prostor aktivan",
+    "select_category_hint": "Izaberi kategoriju radova iz sidebara.",
+    "loading_workspace": "Ućitava se..."
+  },
+  "Dashboard": {
+    "title": "Kontrolna tabla",
+    "welcome": "Dobrodošli nazad",
+    "nav": {
+      "projects": "Projekti",
+    "workers": "Radnici",
+    "clients": "Klijenti",
+    "karnet": "Karnet",
+    "pricing": "Cenovnik",
+    "finances": "Finansije"
+    },
+    "stats": {
+    "active_workers": "Aktivni radnici",
+    "open_projects": "Otvoreni projekti",
+    "last_quote": "Poslednja ponuda",
+    "total_clients": "Ukupno klijenata"
+  },
+    "user_menu": {
+      "account": "Moj nalog",
+      "settings": "Podešavanja",
+      "logout": "Odjavi se"
+    }
+  },
+  "Clients": {
+  "clients_title": "Klijenti",
+  "clients_subtitle": "Upravljajte listom investitora i vlasnika projekata.",
+  "add_client": "Dodaj klijenta",
+  "search_clients": "Pretraga po imenu, emailu ili adresi...",
+  "client_name": "Naziv klijenta",
+  "contact_info": "Kontakt podaci",
+  "address": "Adresa",
+  "actions": "Akcije",
+  "no_clients": "Nema pronađenih klijenata.",
+  "new_client": "Novi klijent",
+  "edit_client": "Izmeni klijenta",
+  "save_client": "Sačuvaj klijenta",
+  "cancel": "Otkaži",
+  "phone": "Telefon",
+  "confirm_delete_client": "Da li ste sigurni da želite da obrišete ovog klijenta?",
+  "error_load_clients": "Greška pri učitavanju klijenata.",
+  "error_save_client": "Došlo je do greške prilikom čuvanja klijenta.",
+  "error_delete_client": "Brisanje klijenta nije uspelo."
+},
+
+  "Projects": {
+    "projects_test_title": "Test Baze: Projekti",
+    "loading": "Učitavanje projekata...",
+    "no_projects": "Nema projekata ili se učitavaju...",
+    "no_client": "Nema klijenta"
+  },
+ "Workers": {
+  "title": "Radnici",
+  "subtitle": "Upravljanje zaposlenima, platama i ugovorima.",
+  "addWorker": "Dodaj radnika",
+  "searchPlaceholder": "Pretraži po imenu ili poziciji...",
+  "newWorker": "Novi radnik",
+  "editWorker": "Izmeni radnika",
+  "confirmDelete": "Da li ste sigurni da želite da obrišete radnika?",
+  "table": {
+    "name": "Ime i prezime",
+    "position": "Pozicija",
+    "rate": "Satnica",
+    "contract": "Status ugovora",
+    "actions": "Akcije",
+    "no_email": "Bez email adrese",
+    "no_phone": "Bez telefona",
+    "rate_account": "Zarada i račun",
+    "no_info": "Nema podataka",
+    "edit": "Izmeni",
+    "delete": "Obriši",
+    "no_results": "Nema rezultata"
+  },
+  "form": {
+    "firstName": "Ime",
+    "lastName": "Prezime",
+    "position": "Radno mesto",
+    "hourlyRate": "Cena po satu",
+    "cancel": "Odustani",
+    "save": "Sačuvaj",
+    "contractType": "Tip ugovora",
+    "permanent": "Na neodređeno",
+    "limited": "Ograničen trajanje",
+    "contractUntil": "Ugovor do",
+    "currency": "Valuta"
+  },
+  "notifications": {
+    "expired": "ISTEKLO ({date})",
+    "expiring_soon": "Ističe uskoro ({date})"
+  },
+  "modal": {
+    "title_new": "Novi radnik",
+    "title_edit": "Izmeni podatke",
+    "placeholder_firstName": "Ime",
+    "placeholder_lastName": "Prezime",
+    "placeholder_position": "Pozicija",
+    "placeholder_hourlyRate": "Cena po satu",
+    "select_contractType": "Tip ugovora",
+    "select_currency": "Valuta",
+    "button_cancel": "Odustani",
+    "button_save": "Sačuvaj",
+    "option_permanent": "Na neodređeno",
+    "option_limited": "Ograničen trajanje",
+    "label_email": "Email adresa",
+    "placeholder_email": "Primer: petar@firma.rs",
+    "label_phone": "Kontakt telefon",
+    "placeholder_phone": "+381 60 123 4567",
+    "label_firstName": "Ime",
+    "label_lastName": "Prezime",
+    "label_position": "Pozicija",
+    "label_contractType": "Tip ugovora",
+    "label_contractUntil": "Ugovor do",
+    "label_hourlyRate": "Cena po radnom satu",
+    "label_currency": "Valuta",
+    "label_bankAccount": "Bankovni račun (IBAN)"
+    
+  }
+}
+}

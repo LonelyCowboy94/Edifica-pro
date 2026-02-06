@@ -1,0 +1,220 @@
+{
+  "Countries": {
+  "country_rs": "Serbia",
+  "country_hr": "Croatia",
+  "country_ba": "Bosnia and Herzegovina",
+  "country_me": "Montenegro",
+  "country_si": "Slovenia",
+  "country_de": "Germany",
+  "country_at": "Austria",
+  "country_ch": "Switzerland",
+  "country_nl": "Netherlands",
+  "country_dk": "Denmark",
+  "country_se": "Sweden",
+  "country_no": "Norway",
+  "country_gb": "United Kingdom"
+},
+  "Index": {
+    "title": "The Future of Construction Site Management",
+    "description": "A professional tool for managing construction companies, price lists, and workforce in one place.",
+    "cta": "Start for free",
+    "login": "Login"
+  },
+  "Navbar": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register"
+  },
+  "Hero": {
+    "tagline": "Available for the EU, Germany and Balkan",
+    "title": "An All-in-One Solution for Modern Construction Companies",
+    "subtitle": "Manage projects, workers, and accurate price lists in one place. Professional, digital, and secure.",
+    "cta_primary": "Start for free",
+    "cta_secondary": "View demo"
+  },
+  "Pricing": {
+    "title": "Simple Plans for Every Team",
+    "subtitle": "Choose the package that best fits your business scale.",
+    "cta": "Choose plan",
+    "features": {
+      "workers": "workers",
+      "admins": "administrators",
+      "price_lists": "Custom price lists"
+    },
+    "plans": {
+      "free": { "name": "Free" },
+      "small": { "name": "Small Team" },
+      "medium": { "name": "Medium Team" },
+      "enterprise": { "name": "Enterprise" }
+    }
+  },
+  "Auth": {
+    "loading": "Loading...",
+    "login_title": "System Login",
+    "welcome_message": "Welcome back to the Edifica Pro system.",
+    "register_title": "Company Registration",
+    "register_subtitle": "Create an account for your company and start the digital transformation of your construction site.",
+    "company_name": "Company name",
+    "company_name_placeholder": "E.g. Edifica Construction Ltd.",
+    "email": "Email address",
+    "email_placeholder_example": "example@company.com",
+    "password": "Password",
+    "confirm_password": "Confirm password",
+    "passwords_dont_match": "Passwords do not match.",
+    "login_button": "Log in",
+    "register_button": "Start for free",
+    "button_next": "Next",
+    "button_back": "Back",
+"button_finish": "Finish Registration",
+"register_step2_title": "CUSTOMIZE SPACE",
+"register_step2_subtitle": "Select your package and business region",
+"register_region_label": "Business Region",
+"register_tier_label": "Select Service Package",
+    "no_account": "Don't have an account?",
+    "already_have_account": "Already have an account?",
+    "register_cta": "Sign up",
+    "error_invalid": "Invalid email or password",
+    "error_email_required": "Email address is required",
+    "error_company_required": "Company name is required",
+"error_password_required": "Password is required",
+"error_email_format": "Please enter a valid email address"
+  },
+  "Prices": {
+    "title": "My Price Lists",
+    "subtitle": "Manage price registries",
+    "create_new_list": "Create New Price List",
+    "import_from_master": "Import from Master",
+    "my_registries": "My Registries",
+    "active": "ACTIVE",
+    "import_title": "Import Master Price List",
+    "select_country": "Select Country",
+    "select_market": "Select Region",
+    "choose": "Choose...",
+    "confirm_import": "Confirm Import",
+    "no_list_selected": "No price list selected",
+    "select_or_import_hint": "Select a price list from the list or import a new one from the Master registry.",
+    "prompt_list_name": "Enter the name of the new price list:",
+    "workspace_active": "Workspace Active",
+    "select_category_hint": "Select a work category from the sidebar.",
+    "loading_workspace": "Loading..."
+},
+  "Dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back",
+    "nav": {
+      "projects": "Projects",
+      "workers": "Workers",
+      "clients": "Clients",
+      "karnet": "Work Log",
+      "pricing": "Price List",
+      "finances": "Finances"
+    },
+    "stats": {
+      "active_workers": "Active workers",
+      "open_projects": "Open projects",
+      "last_quote": "Latest quote",
+      "total_clients": "Total clients"
+    },
+    "user_menu": {
+      "account": "My account",
+      "settings": "Settings",
+      "logout": "Log out"
+    }
+  },
+  "Clients": {
+  "clients_title": "Clients",
+  "clients_subtitle": "Manage your list of investors and project owners.",
+  "add_client": "Add client",
+  "search_clients": "Search by name, email, or address...",
+  "client_name": "Client name",
+  "contact_info": "Contact information",
+  "address": "Address",
+  "actions": "Actions",
+  "no_clients": "No clients found.",
+  "new_client": "New client",
+  "edit_client": "Edit client",
+  "save_client": "Save client",
+  "cancel": "Cancel",
+  "phone": "Phone",
+  "confirm_delete_client": "Are you sure you want to delete this client?",
+  "error_load_clients": "Failed to load clients.",
+  "error_save_client": "An error occurred while saving the client.",
+  "error_delete_client": "Failed to delete the client."
+},
+"Projects": {
+    "projects_test_title": "Database Test: Projects",
+    "loading": "Loading projects...",
+    "no_projects": "No projects found or still loading...",
+    "no_client": "No client"
+  },
+ "Workers": {
+    "title": "Workers",
+    "subtitle": "Manage employees, salaries, and contracts.",
+    "addWorker": "Add Worker",
+    "searchPlaceholder": "Search by name or position...",
+    "newWorker": "New Worker",
+    "editWorker": "Edit Worker",
+    "confirmDelete": "Are you sure you want to delete this worker?",
+    "table": {
+      "name": "Full Name",
+      "position": "Position",
+      "rate": "Hourly Rate",
+      "contract": "Contract Status",
+      "actions": "Actions",
+      "no_email": "No email",
+      "no_phone": "No phone",
+      "rate_account": "Earnings & Account",
+    "no_info": "No info",
+    "edit": "Edit",
+"delete": "Delete",
+"no_results": "No results"
+    },
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "position": "Position",
+      "hourlyRate": "Hourly Rate",
+      "cancel": "Cancel",
+      "save": "Save",
+      "contractType": "Contract Type",
+      "permanent": "Permanent",
+      "limited": "Limited",
+      "contractUntil": "Contract Until",
+      "currency": "Currency"
+    },
+    "notifications": {
+      "expired": "EXPIRED ({date})",
+      "expiring_soon": "Expiring Soon ({date})"
+    },
+  "modal": {
+  "title_new": "New Worker",
+  "title_edit": "Edit Worker",
+  "placeholder_firstName": "First Name",
+  "placeholder_lastName": "Last Name",
+  "placeholder_position": "Position",
+  "placeholder_hourlyRate": "Hourly Rate",
+  "select_contractType": "Contract Type",
+  "select_currency": "Currency",
+  "button_cancel": "Cancel",
+  "button_save": "Save",
+  "option_permanent": "Permanent",
+  "option_limited": "Limited",
+  "label_email": "Email",
+  "placeholder_email": "Example: john@company.com",
+  "label_phone": "Phone",
+  "placeholder_phone": "+1 555 123 4567",
+  "label_firstName": "First Name",
+  "label_lastName": "Last Name",
+  "label_position": "Position",
+  "label_contractType": "Contract Type",
+  "label_contractUntil": "Contract Until",
+  "label_hourlyRate": "Hourly Rate",
+  "label_currency": "Currency",
+  "label_bankAccount": "Bank Account (IBAN)"
+}
+
+  }
+
+}

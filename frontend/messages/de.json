@@ -1,0 +1,219 @@
+{
+  "Countries": {
+  "country_rs": "Serbien",
+  "country_hr": "Kroatien",
+  "country_ba": "Bosnien und Herzegowina",
+  "country_me": "Montenegro",
+  "country_si": "Slowenien",
+  "country_de": "Deutschland",
+  "country_at": "Österreich",
+  "country_ch": "Schweiz",
+  "country_nl": "Niederlande",
+  "country_dk": "Dänemark",
+  "country_se": "Schweden",
+  "country_no": "Norwegen",
+  "country_gb": "Vereinigtes Königreich"
+},
+  "Index": {
+    "title": "Die Zukunft des Baustellenmanagements",
+    "description": "Ein professionelles Tool zur Verwaltung von Bauunternehmen, Preislisten und Arbeitskräften an einem Ort.",
+    "cta": "Kostenlos starten",
+    "login": "Anmelden"
+  },
+  "Navbar": {
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "contact": "Kontakt",
+    "login": "Anmelden",
+    "register": "Registrieren"
+  },
+  "Hero": {
+    "tagline": "Verfügbar für Deutschland, EU und Balkan",
+    "title": "Die Komplettlösung für moderne Bauunternehmen",
+    "subtitle": "Verwalten Sie Projekte, Mitarbeiter und präzise Preislisten an einem Ort. Professionell, digital und sicher.",
+    "cta_primary": "Kostenlos starten",
+    "cta_secondary": "Demo ansehen"
+  },
+  "Pricing": {
+    "title": "Einfache Pläne für jedes Team",
+    "subtitle": "Wählen Sie das Paket, das am besten zu Ihrem Unternehmen passt.",
+    "cta": "Paket auswählen",
+    "features": {
+      "workers": "Mitarbeiter",
+      "admins": "Administratoren",
+      "price_lists": "Individuelle Preislisten"
+    },
+    "plans": {
+      "free": { "name": "Kostenlos" },
+      "small": { "name": "Kleines Team" },
+      "medium": { "name": "Mittleres Team" },
+      "enterprise": { "name": "Unternehmen" }
+    }
+  },
+  "Auth": {
+    "loading": "Lade...",
+    "login_title": "Systemanmeldung",
+    "welcome_message": "Willkommen zurück im Edifica Pro System.",
+    "register_title": "Firmenregistrierung",
+    "company_name": "Firmenname",
+    "register_subtitle": "Erstellen Sie ein Konto für Ihr Unternehmen und starten Sie die digitale Transformation Ihrer Baustelle.",
+    "company_name_placeholder": "Z.B. Edifica Construction GmbH",
+    "email": "E-Mail-Adresse",
+    "email_placeholder_example": "beispiel@firma.de",
+    "password": "Passwort",
+    "confirm_password": "Passwort bestätigen",
+    "passwords_dont_match": "Die Passwörter stimmen nicht überein.",
+    "login_button": "Anmelden",
+    "register_button": "Kostenlos starten",
+    "button_next": "Weiter",
+    "button_back": "Zurück",
+"button_finish": "Registrierung abschließen",
+"register_step2_title": "RAUM ANPASSEN",
+"register_step2_subtitle": "Wählen Sie Ihr Paket und Ihre Geschäftsregion",
+"register_region_label": "Geschäftsregion",
+"register_tier_label": "Dienstleistungspaket auswählen",
+    "no_account": "Noch kein Konto?",
+    "already_have_account": "Haben Sie bereits ein Konto?",
+    "register_cta": "Jetzt registrieren",
+    "error_invalid": "Falsche E-Mail oder falsches Passwort",
+    "error_email_required": "E-Mail-Adresse ist erforderlich",
+    "error_company_required": "Firmenname ist erforderlich",
+"error_password_required": "Passwort ist erforderlich",
+"error_email_format": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+  },
+  "Prices": {
+    "title": "Meine Preislisten",
+    "subtitle": "Verwaltung der Preisregister",
+    "create_new_list": "Neue Preisliste erstellen",
+    "import_from_master": "Aus Master importieren",
+    "my_registries": "Meine Register",
+    "active": "AKTIV",
+    "import_title": "Master-Preisliste importieren",
+    "select_country": "Land auswählen",
+    "select_market": "Region auswählen",
+    "choose": "Auswählen...",
+    "confirm_import": "Import bestätigen",
+    "no_list_selected": "Keine Preisliste ausgewählt",
+    "select_or_import_hint": "Wählen Sie eine Preisliste aus der Liste oder importieren Sie eine neue aus dem Master-Register.",
+    "prompt_list_name": "Geben Sie den Namen der neuen Preisliste ein:",
+    "workspace_active": "Arbeitsbereich aktiv",
+    "select_category_hint": "Wählen Sie eine Arbeitskategorie aus der Seitenleiste.",
+    "loading_workspace": "Wird geladen..."
+},
+  "Dashboard": {
+    "title": "Dashboard",
+    "welcome": "Willkommen zurück",
+    "nav": {
+      "projects": "Projekte",
+      "workers": "Mitarbeiter",
+      "clients": "Kunden",
+      "karnet": "Arbeitsnachweis",
+      "pricing": "Preisliste",
+      "finances": "Finanzen"
+    },
+    "stats": {
+      "active_workers": "Aktive Mitarbeiter",
+      "open_projects": "Offene Projekte",
+      "last_quote": "Letztes Angebot",
+      "total_clients": "Gesamtzahl der Kunden"
+    },
+    "user_menu": {
+      "account": "Mein Konto",
+      "settings": "Einstellungen",
+      "logout": "Abmelden"
+    }
+  },
+  "Clients": {
+    "clients_title": "Kunden",
+    "clients_subtitle": "Verwalten Sie Ihre Liste von Investoren und Projektinhabern.",
+    "add_client": "Kunden hinzufügen",
+    "search_clients": "Suche nach Name, E-Mail oder Adresse...",
+    "client_name": "Kundenname",
+    "contact_info": "Kontaktinformationen",
+    "address": "Adresse",
+    "actions": "Aktionen",
+    "no_clients": "Keine Kunden gefunden.",
+    "new_client": "Neuer Kunde",
+    "edit_client": "Kunden bearbeiten",
+    "save_client": "Kunden speichern",
+    "cancel": "Abbrechen",
+    "phone": "Telefon",
+    "confirm_delete_client": "Möchten Sie diesen Kunden wirklich löschen?",
+    "error_load_clients": "Fehler beim Laden der Kunden.",
+    "error_save_client": "Beim Speichern des Kunden ist ein Fehler aufgetreten.",
+    "error_delete_client": "Der Kunde konnte nicht gelöscht werden."
+  },
+  "Projects": {
+    "projects_test_title": "Datenbanktest: Projekte",
+    "loading": "Projekte werden geladen...",
+    "no_projects": "Keine Projekte gefunden oder werden geladen...",
+    "no_client": "Kein Kunde"
+  },
+
+  "Workers": {
+    "title": "Mitarbeiter",
+    "subtitle": "Verwaltung von Mitarbeitern, Gehältern und Verträgen.",
+    "addWorker": "Mitarbeiter hinzufügen",
+    "searchPlaceholder": "Nach Name oder Position suchen...",
+    "newWorker": "Neuer Mitarbeiter",
+    "editWorker": "Mitarbeiter bearbeiten",
+    "confirmDelete": "Sind Sie sicher, dass Sie diesen Mitarbeiter löschen möchten?",
+    "table": {
+      "name": "Name",
+      "position": "Position",
+      "rate": "Stundensatz",
+      "contract": "Vertragsstatus",
+      "actions": "Aktionen",
+      "no_email": "Keine E-Mail",
+      "no_phone": "Keine Telefonnummer",
+      "rate_account": "Verdienst & Konto",
+    "no_info": "Keine Info",
+    "edit": "Bearbeiten",
+"delete": "Löschen",
+"no_results": "Keine Ergebnisse"
+    },
+    "form": {
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "position": "Position",
+      "hourlyRate": "Stundensatz",
+      "cancel": "Abbrechen",
+      "save": "Speichern",
+      "contractType": "Vertragsart",
+      "permanent": "Unbefristet",
+      "limited": "Befristet",
+      "contractUntil": "Vertrag bis",
+      "currency": "Währung"
+    },
+    "notifications": {
+      "expired": "ABGELAUFEN ({date})",
+      "expiring_soon": "Läuft bald ab ({date})"
+    },
+    "modal": {
+      "title_new": "Neuer Mitarbeiter",
+      "title_edit": "Daten bearbeiten",
+      "placeholder_firstName": "Vorname",
+      "placeholder_lastName": "Nachname",
+      "placeholder_position": "Position",
+      "placeholder_hourlyRate": "Stundensatz",
+      "select_contractType": "Vertragsart",
+      "select_currency": "Währung",
+      "button_cancel": "Abbrechen",
+      "button_save": "Speichern",
+      "option_permanent": "Unbefristet",
+      "option_limited": "Befristet",
+      "label_email": "E-Mail",
+      "placeholder_email": "Beispiel: john@firma.de",
+      "label_phone": "Telefon",
+      "placeholder_phone": "+49 170 1234567",
+      "label_firstName": "Vorname",
+      "label_lastName": "Nachname",
+      "label_position": "Position",
+      "label_contractType": "Vertragsart",
+      "label_contractUntil": "Vertrag bis",
+      "label_hourlyRate": "Stundensatz",
+      "label_currency": "Währung",
+      "label_bankAccount": "Bankkonto (IBAN)"
+    }
+  }
+}
