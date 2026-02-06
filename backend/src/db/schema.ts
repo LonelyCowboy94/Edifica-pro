@@ -27,6 +27,9 @@ export const companies = pgTable("companies", {
   tier: tierEnum("tier").default("FREE").notNull(),
   country: text("country").notNull(), 
   baseCurrency: text("base_currency").default("EUR").notNull(), 
+  logoUrl: text("logo_url"), 
+  defaultWeekdayHours: numeric("default_weekday_hours", { precision: 4, scale: 2 }).default("8.00").notNull(),
+  defaultWeekendHours: numeric("default_weekend_hours", { precision: 4, scale: 2 }).default("0.00").notNull(),
   createdAt: timestamp("created_at").defaultNow(),
 });
 

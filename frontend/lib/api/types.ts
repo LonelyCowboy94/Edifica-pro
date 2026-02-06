@@ -139,3 +139,27 @@ export interface DashboardResponse {
   recentLogs: WorkLog[];
   chartData: ChartDataPoint[]; 
 }
+
+export interface CompanySettings {
+  id: string;
+  name: string;
+  country: string;
+  baseCurrency: string;
+  logoUrl: string | null;
+  defaultWeekdayHours: string;
+  defaultWeekendHours: string;
+}
+
+export interface UpdateCompanyPayload {
+  name?: string;
+  baseCurrency?: string;
+  logoUrl?: string;
+  defaultWeekdayHours?: string;
+  defaultWeekendHours?: string;
+}
+
+export interface UpdateUserPayload {
+  email?: string;
+  password?: string;
+  oldPassword?: string;
+}

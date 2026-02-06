@@ -12,6 +12,7 @@ import {
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { UserMeResponse } from "@/lib/api/types";
+import Link from "next/link";
 
 interface UserNavProps {
   user: UserMeResponse | null;
@@ -70,9 +71,9 @@ export default function UserNav({ user }: UserNavProps) {
                 <button className="w-full flex items-center gap-3 px-4 py-3 text-xs font-bold text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all rounded-xl">
                   <User className="w-4 h-4 opacity-50" /> {t("account")}
                 </button>
-                <button className="w-full flex items-center gap-3 px-4 py-3 text-xs font-bold text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all rounded-xl">
+                <Link href="/dashboard/settings" onClick={() => setIsOpen(false)} className="w-full flex items-center gap-3 px-4 py-3 text-xs font-bold text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all rounded-xl">
                   <Settings className="w-4 h-4 opacity-50" /> {t("settings")}
-                </button>
+                </Link>
             </div>
             
             <div className="border-t border-slate-100 mt-1 p-1">

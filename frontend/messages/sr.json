@@ -288,6 +288,11 @@
   }
 },
  "Karnet": {
+  "searchPlaceholder": "Pretraži po imenu ili poziciji...",
+    "deselectAll": "Poništi izbor",
+    "selectAll": "Izaberi sve",
+    "tableSelect": "Izbor",
+    "workersSelected": "{count, plural, one {# radnik selektovan} few {# radnika selektovana} other {# radnika selektovano}}",
     "title": "Dnevni Unos Rada",
     "projectLabel": "Gradilište / Projekat",
     "projectPlaceholder": "Izaberi gradilište...",
