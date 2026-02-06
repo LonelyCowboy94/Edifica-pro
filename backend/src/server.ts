@@ -8,6 +8,7 @@ import { projectRouter } from './routes/projects';
 import { clientPriceRouter } from './routes/clientPriceRouter';
 import workLogRoutes from "./routes/workLog";
 import priceRoutes from "./routes/pricesUpdate";
+import { dashboardRouter } from './routes/dashboardRouter';
 
 dotenv.config();
 
@@ -23,13 +24,14 @@ app.use((req, res, next) => {
   next();
 });
 
-// Rute
+// Routes
 app.use('/api/auth', authRouter);
 app.use('/api/workers', workerRouter);
 app.use('/api/clients', clientRouter);
 app.use('/api/projects', projectRouter);
 app.use("/api/prices", priceRoutes);
 app.use("/api/client-prices", clientPriceRouter);
+app.use("/api/dashboard", dashboardRouter);
 
 // Karnet i Isplate (montirano na /api jer unutar fajla već imaju prefikse)
 app.use("/api", workLogRoutes); 

@@ -6,13 +6,17 @@ export interface ClientData {
   address?: string;
 }
 
-export interface WorkerData {
-  id: string;
+export interface WorkerMinimal {
   firstName: string;
   lastName: string;
+  position: string; 
+  currency: string;
+}
+
+export interface WorkerData extends WorkerMinimal {
+  id: string;
   email?: string;
   phone?: string;
-  position: string;
   joinedAt: string;
   contractType: "permanent" | "limited";
   contractUntil?: string | null;
@@ -40,8 +44,51 @@ export interface AuthResponse {
   error?: string;
 }
 
-export interface WorkerProjectAnalytics {
-  name: string;
+// --- WORK LOG TYPES ---
+
+export interface WorkLogEntry {
+  workerId: string;
+  regularHours: number;
+  overtimeHours: number;
+}
+
+export interface CreateBulkWorkLogPayload {
+  projectId: string;
+  date: string;
+  entries: WorkLogEntry[];
+}
+
+export interface WorkLog {
+  id: string;
+  companyId: string;
+  workerId: string;
+  projectId: string;
+  date: string;
+  regularHours: number;
+  overtimeHours: number;
+  status: "PENDING" | "SETTLED";
+  hourlyRateAtTime: string; 
+  payoutId: string | null;
+  createdAt: string;
+  worker?: WorkerMinimal;
+  project?: {
+    name: string;
+  };
+}
+
+// --- PAYOUT TYPES ---
+
+export interface WorkerPayout {
+  id: string;
+  workerId: string;
+  totalAmount: string;
+  paidAt: string;
+  worker?: WorkerMinimal;
+}
+
+// --- ANALYTICS TYPES ---
+
+export interface WorkerProjectAnalytics extends WorkerMinimal {
   totalHours: number;
   totalCost: number;
 }
@@ -56,16 +103,39 @@ export interface ProjectDetailsResponse extends ProjectData {
   client: {
     name: string;
   } | null;
-  workLogs: Array<{
-    id: string;
-    date: string;
-    regularHours: number;
-    overtimeHours: number;
-    hourlyRateAtTime: string;
-    worker: {
-      firstName: string;
-      lastName: string;
-    };
-  }>;
+  workLogs: Array<WorkLog>;
   analytics: ProjectAnalytics;
+  baseCurrency: string;
+}
+
+export interface DashboardStats {
+  activeProjects: number;
+  totalWorkers: number;
+  pendingLaborCost: number;
+  baseCurrency: string;
+}
+
+export interface DashboardResponse {
+  stats: DashboardStats;
+  recentLogs: WorkLog[]; 
+}
+
+export interface UserMeResponse {
+  id: string;
+  email: string;
+  role: string;
+  companyName: string;
+  baseCurrency: string;
+}
+
+export interface ChartDataPoint {
+  date: string;
+  cost: number;
+  hours: number;
+}
+
+export interface DashboardResponse {
+  stats: DashboardStats;
+  recentLogs: WorkLog[];
+  chartData: ChartDataPoint[]; 
 }

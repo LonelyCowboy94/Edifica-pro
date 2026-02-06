@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { db } from "../db";
 import { workLogs, workers } from "../db/schema";
-import { eq, and, desc } from "drizzle-orm";
+import { eq, and, desc, inArray } from "drizzle-orm";
 
 interface AuthenticatedRequest extends Request {
   user: { id: string; companyId: string; role: string };
@@ -12,27 +12,57 @@ export const workLogController = {
     const authReq = req as AuthenticatedRequest;
     try {
       const { projectId, date, entries } = req.body;
-      const logsToInsert = await Promise.all(
-        entries.map(async (entry: any) => {
-          const worker = await db.query.workers.findFirst({
-            where: eq(workers.id, entry.workerId),
-          });
+      const companyId = authReq.user.companyId;
+
+      // 1. Povuci sve radnike firme da bi uzeo snapshot satnica
+      const allWorkers = await db.query.workers.findMany({
+        where: eq(workers.companyId, companyId),
+      });
+
+      // 2. Pripremi podatke i FILTRIRAJ radnike sa 0 sati
+      const logsToInsert = entries
+        .filter((entry: any) => entry.regularHours > 0 || entry.overtimeHours > 0)
+        .map((entry: any) => {
+          const worker = allWorkers.find((w) => w.id === entry.workerId);
           return {
-            companyId: authReq.user.companyId,
+            companyId,
             projectId,
             workerId: entry.workerId,
             date: new Date(date),
             regularHours: entry.regularHours,
             overtimeHours: entry.overtimeHours,
             hourlyRateAtTime: worker?.hourlyRate || "0",
-            status: "PENDING" as "PENDING" | "SETTLED",
+            status: "PENDING" as const,
           };
-        })
-      );
+        });
+
+      if (logsToInsert.length === 0) {
+        return res.status(400).json({ message: "Nema unosa sa satima većim od nule." });
+      }
+
+      // 3. Bulk insert u jednom upitu
       const result = await db.insert(workLogs).values(logsToInsert).returning();
       res.status(201).json(result);
     } catch (error) {
-      res.status(500).json({ message: "Greška pri kreiranju", error });
+      console.error(error);
+      res.status(500).json({ message: "Greška pri masovnom upisu", error });
+    }
+  },
+
+  getAll: async (req: Request, res: Response) => {
+    const authReq = req as AuthenticatedRequest;
+    try {
+      const result = await db.query.workLogs.findMany({
+        where: eq(workLogs.companyId, authReq.user.companyId),
+        orderBy: [desc(workLogs.date)],
+        with: {
+          worker: true, // Ovo omogućava log.worker.firstName na frontendu
+          project: true
+        }
+      });
+      res.json(result);
+    } catch (error) {
+      res.status(500).json({ message: "Greška pri dobavljanju podataka", error });
     }
   },
 
@@ -52,19 +82,6 @@ export const workLogController = {
     }
   },
 
-  getAll: async (req: Request, res: Response) => {
-    const authReq = req as AuthenticatedRequest;
-    try {
-      const result = await db.query.workLogs.findMany({
-        where: eq(workLogs.companyId, authReq.user.companyId),
-        orderBy: [desc(workLogs.date)],
-      });
-      res.json(result);
-    } catch (error) {
-      res.status(500).json({ message: "Greška", error });
-    }
-  },
-
   update: async (req: Request, res: Response) => {
     const authReq = req as AuthenticatedRequest;
     const id = req.params.id as string; 
@@ -78,19 +95,6 @@ export const workLogController = {
       res.status(500).json({ message: "Greška", error });
     }
   },
-
-  getHistory: async (req: Request, res: Response) => {
-  const authReq = req as AuthenticatedRequest;
-  const result = await db.query.workLogs.findMany({
-    where: and(
-      eq(workLogs.companyId, authReq.user.companyId),
-      eq(workLogs.status, "SETTLED")
-    ),
-    with: { worker: true, project: true },
-    orderBy: [desc(workLogs.date)]
-  });
-  res.json(result);
-},
 
   delete: async (req: Request, res: Response) => {
     const authReq = req as AuthenticatedRequest;

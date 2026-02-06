@@ -16,6 +16,7 @@
     "@neondatabase/serverless": "^1.0.2",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
+    "date-fns": "^4.1.0",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.45.1",
     "express": "^5.2.1",
@@ -23,6 +24,7 @@
     "i18next-fs-backend": "^2.6.1",
     "i18next-http-middleware": "^3.9.2",
     "jsonwebtoken": "^9.0.3",
+    "recharts": "^3.7.0",
     "ws": "^8.19.0",
     "zod": "^4.3.6"
   },

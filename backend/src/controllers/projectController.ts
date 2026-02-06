@@ -1,9 +1,8 @@
 import { Request, Response } from "express";
 import { db } from "../db";
-import { projects, workLogs } from "../db/schema"; // Dodat workLogs import
+import { projects, workLogs, companies } from "../db/schema";
 import { eq, and, desc } from "drizzle-orm";
 
-// Interface for authenticated request
 interface AuthenticatedRequest extends Request {
   user: {
     id: string;
@@ -13,7 +12,7 @@ interface AuthenticatedRequest extends Request {
 }
 
 export const projectController = {
-  // 1. Create project linked to a client
+  // Create a new project
   create: async (req: Request, res: Response) => {
     const authReq = req as AuthenticatedRequest;
     const { name, clientId, status } = authReq.body;
@@ -30,15 +29,13 @@ export const projectController = {
     }
   },
 
-  // 2. List all projects with client data (using relations)
+  // List all projects with client data
   getAll: async (req: Request, res: Response) => {
     const authReq = req as AuthenticatedRequest;
     try {
       const result = await db.query.projects.findMany({
         where: eq(projects.companyId, authReq.user.companyId),
-        with: {
-          client: true,
-        },
+        with: { client: true },
         orderBy: [desc(projects.createdAt)]
       });
       res.json(result);
@@ -47,12 +44,13 @@ export const projectController = {
     }
   },
 
-  // 3. GET PROJECT DETAILS (Full analytics, workers, and history)
+  // Get deep details, analytics and company currency
   getDetails: async (req: Request, res: Response) => {
     const authReq = req as AuthenticatedRequest;
-    const projectId = req.params.id as string; // Casting to string
+    const projectId = req.params.id as string;
 
     try {
+      // 1. Fetch project data with logs and worker relations
       const projectData = await db.query.projects.findFirst({
         where: and(
           eq(projects.id, projectId),
@@ -61,17 +59,20 @@ export const projectController = {
         with: {
           client: true,
           workLogs: {
-            with: {
-              worker: true
-            },
+            with: { worker: true },
             orderBy: [desc(workLogs.date)]
           }
         }
       });
 
+      // 2. Fetch company to get baseCurrency
+      const companyData = await db.query.companies.findFirst({
+        where: eq(companies.id, authReq.user.companyId)
+      });
+
       if (!projectData) return res.status(404).json({ message: "Project not found" });
 
-      // Backend calculation for analytics
+      // 3. Aggregate analytics including full worker metadata for the frontend table
       const stats = projectData.workLogs.reduce((acc, log) => {
         const workerId = log.workerId;
         const totalHours = log.regularHours + log.overtimeHours;
@@ -79,20 +80,30 @@ export const projectController = {
 
         if (!acc.workers[workerId]) {
           acc.workers[workerId] = {
-            name: `${log.worker?.firstName} ${log.worker?.lastName}`,
+            firstName: log.worker?.firstName || "N/A",
+            lastName: log.worker?.lastName || "N/A",
+            position: log.worker?.position || "N/A",
+            currency: log.worker?.currency || "EUR",
             totalHours: 0,
             totalCost: 0
           };
         }
+        
         acc.workers[workerId].totalHours += totalHours;
         acc.workers[workerId].totalCost += cost;
         acc.totalHours += totalHours;
         acc.totalCost += cost;
+        
         return acc;
-      }, { totalHours: 0, totalCost: 0, workers: {} as any });
+      }, { 
+        totalHours: 0, 
+        totalCost: 0, 
+        workers: {} as Record<string, any> 
+      });
 
       res.json({
         ...projectData,
+        baseCurrency: companyData?.baseCurrency || "EUR",
         analytics: stats
       });
     } catch (error) {
@@ -101,11 +112,10 @@ export const projectController = {
     }
   },
 
-  // 4. Update project
+  // Update project details
   update: async (req: Request, res: Response) => {
     const authReq = req as AuthenticatedRequest;
-    const projectId = req.params.id as string; // Fixes overload error 2769
-    
+    const projectId = req.params.id as string;
     try {
       const updated = await db.update(projects)
         .set(authReq.body)
@@ -122,23 +132,18 @@ export const projectController = {
     }
   },
 
-  // 5. Delete project (Cascade delete handled by DB schema)
+  // Delete project and cascade logs
   delete: async (req: Request, res: Response) => {
     const authReq = req as AuthenticatedRequest;
     const projectId = req.params.id as string;
-    
     try {
-      const deleted = await db.delete(projects)
-        .where(and(
-          eq(projects.id, projectId),
-          eq(projects.companyId, authReq.user.companyId)
-        ))
-        .returning();
-
-      if (deleted.length === 0) return res.status(404).json({ message: "Project not found" });
-      res.json({ success: true, message: "Project and its logs deleted" });
-    } catch (error: any) {
-      res.status(500).json({ error: "Delete failed", details: error.message });
+      await db.delete(projects).where(and(
+        eq(projects.id, projectId),
+        eq(projects.companyId, authReq.user.companyId)
+      ));
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ message: "Delete failed" });
     }
   }
 };

@@ -215,5 +215,47 @@
       "label_currency": "Währung",
       "label_bankAccount": "Bankkonto (IBAN)"
     }
-  }
+  },
+  "Karnet": {
+  "title": "Täglicher Arbeitseintrag",
+  "projectLabel": "Baustelle / Projekt",
+  "projectPlaceholder": "Baustelle auswählen...",
+  "dateLabel": "Arbeitstag",
+  "tableRadnik": "Arbeiter",
+  "tableReg": "Reguläre Stunden",
+  "tableOver": "Überstunden",
+  "defaultNote": "Standardmäßig sind 8 Stunden für alle aktiven Arbeiter eingestellt.",
+  "submitBtn": "HEUTIGEN EINTRAG SPEICHERN",
+  "saving": "SPEICHERN...",
+  "success": "Eintrag erfolgreich gespeichert!",
+  "noProjectError": "Bitte wählen Sie ein Projekt aus",
+  "noHoursError": "Für keinen Arbeiter wurden Stunden eingetragen!"
+},
+  "History": {
+  "title": "Arbeitsverlauf",
+  "totalRecords": "GESAMT: {count} Einträge",
+  "tableDate": "Datum",
+  "tableWorker": "Arbeiter",
+  "tableProject": "Baustelle",
+  "tableHours": "Stunden",
+  "tableStatus": "Status",
+  "tableActions": "Aktionen",
+  "statusSettled": "BEZAHLT",
+  "statusPending": "AUSSTEHEND",
+  "deleteConfirm": "Diesen Eintrag dauerhaft löschen?",
+  "loading": "Archiv wird geladen...",
+  "empty": "Keine Einträge für den ausgewählten Zeitraum.",
+  "filterProject": "Nach Baustelle filtern...",
+  "filterPosition": "Nach Position filtern (z.B. Maurer)...",
+  "noResults": "Keine Ergebnisse für die gewählten Filter.",
+  "allProjects": "Alle Baustellen",
+  "allPositions": "Alle Positionen",
+  "filterWorker": "Nach Arbeiter filtern (Name)...",
+  "workerCount": "{count, plural, =1 {# Arbeiter} other {# Arbeiter}}",
+  "summaryDivider": "|",
+  "totalHoursLabel": "{hours}h",
+  "filterFrom": "Ab Datum",
+"filterTo": "Bis Datum",
+"resetDates": "Daten zurücksetzen"
+}
 }

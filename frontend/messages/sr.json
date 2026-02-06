@@ -78,7 +78,18 @@
     "error_email_required": "Email adresa je obavezna",
     "error_company_required": "Ime firme je obavezno",
 "error_password_required": "Lozinka je obavezna",
-"error_email_format": "Unesite ispravnu email adresu"
+"error_email_format": "Unesite ispravnu email adresu",
+"register_currency_label": "Primarna valuta poslovanja",
+"register_currency_info": "Ovu valutu ćemo koristiti za tvoje globalne izveštaje, analitiku gradilišta i podrazumevane satnice radnika. Možeš je promeniti kasnije u podešavanjima.",
+"currency_rsd": "Srpski dinar (RSD)",
+"currency_eur": "Evro (€)",
+"currency_chf": "Švajcarski franak (CHF)",
+"currency_bam": "Konvertibilna marka (BAM)",
+"currency_gbp": "Britanska funta (£)",
+"currency_usd": "Američki dolar ($)",
+"currency_dkk": "Danska kruna (DKK)",
+"currency_sek": "Švedska kruna (SEK)",
+"currency_nok": "Norveška kruna (NOK)"
   },
   "Prices": {
     "title": "Moji Cenovnici",
@@ -100,8 +111,25 @@
     "loading_workspace": "Ućitava se..."
   },
   "Dashboard": {
-    "title": "Kontrolna tabla",
-    "welcome": "Dobrodošli nazad",
+    "welcome": "Dobrodošao nazad, {name}",
+    "title": "Kontrolna Tabla",
+    "loading": "UČITAVANJE PODATAKA...",
+    "subtitle": "Evo šta se dešava u tvom poslovanju danas.",
+    "statProjects": "Aktivna Gradilišta",
+    "statWorkers": "Ukupno Radnika",
+    "statDebt": "Trenutni Dug (Zarade)",
+    "quickActions": "Brze Akcije",
+    "actionNewLog": "Upiši Karnet",
+    "actionAddWorker": "Dodaj Radnika",
+    "actionNewProject": "Novi Projekat",
+    "recentActivity": "Poslednje Aktivnosti",
+    "noActivity": "Nema nedavnih unosa u karnet.",
+    "viewAll": "Vidi sve",
+    "analyticsTitle": "Analitika Troškova",
+    "analyticsDesc": "Pregled troškova radne snage za tekući mesec.",
+    "chartCost": "Trošak",
+    "chartHours": "Sati",
+    "detailsBtn": "Detaljan izveštaj",
     "nav": {
       "projects": "Projekti",
     "workers": "Radnici",
@@ -122,6 +150,14 @@
       "logout": "Odjavi se"
     }
   },
+  "user_menu": {
+  "account": "Moj Profil",
+  "settings": "Podešavanja",
+  "logout": "Odjavi se",
+  "role_OWNER": "Vlasnik firme",
+  "role_ADMIN": "Administrator",
+  "role_FOREMAN": "Predradnik"
+},
   "Clients": {
   "clients_title": "Klijenti",
   "clients_subtitle": "Upravljajte listom investitora i vlasnika projekata.",
@@ -143,11 +179,46 @@
   "error_delete_client": "Brisanje klijenta nije uspelo."
 },
 
-  "Projects": {
-    "projects_test_title": "Test Baze: Projekti",
-    "loading": "Učitavanje projekata...",
-    "no_projects": "Nema projekata ili se učitavaju...",
-    "no_client": "Nema klijenta"
+   "Projects": {
+    "title": "PROJEKTI",
+    "subtitle": "Upravljanje gradilištima i ugovorenim radovima",
+    "activeProjects": "Aktivna Gradilišta",
+    "newProjectBtn": "+ NOVO GRADILIŠTE",
+    "filterName": "Pretraži projekat...",
+    "filterClient": "Pretraži klijenta...",
+    "investorLabel": "Investitor / Klijent",
+    "noClient": "Direktni radovi (Bez klijenta)",
+    "detailsBtn": "DETALJI",
+    "deleteBtn": "OBRIŠI",
+    "loading": "Učitavanje...",
+    "modalTitle": "Novo Gradilište",
+    "modalNameLabel": "Naziv Projekta",
+    "modalNamePlaceholder": "npr. Stambena zgrada - Blok 32",
+    "modalClientLabel": "Dodeli Klijenta (Opciono)",
+    "modalClientDefault": "Bez klijenta",
+    "cancelBtn": "ODUSTANI",
+    "createBtn": "KREIRAJ",
+    "creating": "SLANJE...",
+    "createError": "Greška pri kreiranju projekta."
+  },
+  "ProjectDetails": {
+    "backBtn": "NAZAD NA LISTU",
+    "statusLabel": "STATUS",
+    "clientLabel": "Klijent",
+    "noClient": "Direktni radovi",
+    "totalHours": "Ukupno utrošeno sati",
+    "laborCost": "Trošak radne snage",
+    "assignedWorkers": "Angažovani Radnici",
+    "tableWorker": "Radnik",
+    "tableTotalHours": "Ukupno Sati",
+    "tableCost": "Trošak Zarade",
+    "logTitle": "Hronologija Radova (Dnevnik)",
+    "tableDate": "Datum",
+    "tableReg": "Redovni",
+    "tableOver": "Prekovremeni",
+    "tableRate": "Satnica (snapshot)",
+    "loadingAnalytics": "UČITAVANJE ANALITIKE...",
+    "errorLoading": "Greška pri učitavanju podataka."
   },
  "Workers": {
   "title": "Radnici",
@@ -215,5 +286,47 @@
     "label_bankAccount": "Bankovni račun (IBAN)"
     
   }
-}
+},
+ "Karnet": {
+    "title": "Dnevni Unos Rada",
+    "projectLabel": "Gradilište / Projekat",
+    "projectPlaceholder": "Izaberi gradilište...",
+    "dateLabel": "Datum Rada",
+    "tableRadnik": "Radnik",
+    "tableReg": "Redovni Sati",
+    "tableOver": "Prekovremeni",
+    "defaultNote": "Podrazumevano je postavljeno 8h za sve aktivne radnike.",
+    "submitBtn": "SNIMI KARNET ZA DANAS",
+    "saving": "ČUVANJE...",
+    "success": "Karnet uspešno snimljen!",
+    "noProjectError": "Molimo izaberite projekat",
+    "noHoursError": "Niste uneli sate ni za jednog radnika!"
+  },
+  "History": {
+    "title": "Hronološki pregled rada",
+    "totalRecords": "UKUPNO: {count} zapisa",
+    "tableDate": "Datum",
+    "tableWorker": "Radnik",
+    "tableProject": "Gradilište",
+    "tableHours": "Sati",
+    "tableStatus": "Status",
+    "tableActions": "Akcije",
+    "statusSettled": "ISPLAĆENO",
+    "statusPending": "NA ČEKANJU",
+    "deleteConfirm": "Trajno obrisati ovaj unos?",
+    "loading": "Učitavanje arhive...",
+    "empty": "Nema zabeleženih unosa za odabrani period.",
+    "filterProject": "Filtriraj gradilište...",
+    "filterPosition": "Filtriraj poziciju (npr. Zidar)...",
+    "noResults": "Nema rezultata za zadate filtere.",
+    "allProjects": "Sva gradilišta",
+    "allPositions": "Sve pozicije",
+    "filterWorker": "Filtriraj radnika (ime)...",
+    "workerCount": "{count, plural, =1 {# radnik} other {# radnika}}",
+    "summaryDivider": "|",
+    "totalHoursLabel": "{hours}h",
+    "filterFrom": "Od datuma",
+"filterTo": "Do datuma",
+"resetDates": "Poništi datume"
+  }
 }

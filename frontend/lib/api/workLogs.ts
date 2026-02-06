@@ -1,95 +1,14 @@
 import { API_URL, getHeaders, handleResponse } from "./config";
-
-export interface WorkLogEntry {
-  workerId: string;
-  regularHours: number;
-  overtimeHours: number;
-}
-
-export interface CreateBulkWorkLogPayload {
-  projectId: string;
-  date: string;
-  entries: WorkLogEntry[];
-}
-
-export interface WorkLog {
-  id: string;
-  companyId: string;
-  workerId: string;
-  projectId: string;
-  date: string;
-  regularHours: number;
-  overtimeHours: number;
-  status: "PENDING" | "SETTLED";
-  hourlyRateAtTime: string; 
-  payoutId: string | null;
-  createdAt: string;
-  worker?: {
-    firstName: string;
-    lastName: string;
-  };
-  project?: {
-    name: string;
-  };
-}
-
-export interface WorkerPayout {
-  id: string;
-  workerId: string;
-  totalAmount: string;
-  paidAt: string;
-  worker?: {
-    firstName: string;
-    lastName: string;
-  };
-}
-export interface WorkLogEntry {
-  workerId: string;
-  regularHours: number;
-  overtimeHours: number;
-}
-
-export interface CreateBulkWorkLogPayload {
-  projectId: string;
-  date: string;
-  entries: WorkLogEntry[];
-}
-
-export interface WorkLog {
-  id: string;
-  companyId: string;
-  workerId: string;
-  projectId: string;
-  date: string;
-  regularHours: number;
-  overtimeHours: number;
-  status: "PENDING" | "SETTLED";
-  hourlyRateAtTime: string; 
-  payoutId: string | null;
-  createdAt: string;
-  worker?: {
-    firstName: string;
-    lastName: string;
-  };
-  project?: {
-    name: string;
-  };
-}
-
-export interface WorkerPayout {
-  id: string;
-  workerId: string;
-  totalAmount: string;
-  paidAt: string;
-  worker?: {
-    firstName: string;
-    lastName: string;
-  };
-}
+import { 
+  WorkLog, 
+  CreateBulkWorkLogPayload, 
+  WorkerPayout 
+} from "./types";
 
 export const workLogApi = {
-  // --- KARNET (Work Logs) ---
-  
+  /**
+   * Bulk create work log entries for a specific project and date
+   */
   createBulk: (data: CreateBulkWorkLogPayload): Promise<WorkLog[]> =>
     fetch(`${API_URL}/work-logs/bulk`, {
       method: 'POST',
@@ -97,7 +16,9 @@ export const workLogApi = {
       body: JSON.stringify(data),
     }).then(res => handleResponse<WorkLog[]>(res)),
 
-  // Svi logovi (Skladište) - opciono dodajemo filtere za datume
+  /**
+   * Fetch all work logs with optional date range filtering
+   */
   getAll: (from?: string, to?: string): Promise<WorkLog[]> => {
     const url = from && to 
       ? `${API_URL}/work-logs?from=${from}&to=${to}` 
@@ -106,11 +27,16 @@ export const workLogApi = {
       .then(res => handleResponse<WorkLog[]>(res));
   },
 
+  /**
+   * Fetch only pending (unpaid) work logs
+   */
   getPending: (): Promise<WorkLog[]> =>
     fetch(`${API_URL}/work-logs/pending`, { headers: getHeaders() })
       .then(res => handleResponse<WorkLog[]>(res)),
 
-  // DOPUNA: Update za Edit funkciju
+  /**
+   * Update an existing work log entry
+   */
   update: (id: string, data: Partial<WorkLog>): Promise<WorkLog> =>
     fetch(`${API_URL}/work-logs/${id}`, {
       method: 'PUT',
@@ -118,15 +44,20 @@ export const workLogApi = {
       body: JSON.stringify(data),
     }).then(res => handleResponse<WorkLog>(res)),
 
-  // DOPUNA: Delete za brisanje pogrešnog unosa
+  /**
+   * Permanently delete a work log entry
+   */
   delete: (id: string): Promise<{ message: string }> =>
     fetch(`${API_URL}/work-logs/${id}`, {
       method: 'DELETE',
       headers: getHeaders(),
     }).then(res => handleResponse<{ message: string }>(res)),
 
-  // --- ISPLATE (Payouts) ---
+  // --- PAYOUTS ---
 
+  /**
+   * Settle pending logs for a worker and archive them
+   */
   settleWorker: (workerId: string, note?: string): Promise<{ message: string }> =>
     fetch(`${API_URL}/payouts/settle`, {
       method: 'POST',
@@ -134,11 +65,16 @@ export const workLogApi = {
       body: JSON.stringify({ workerId, note }),
     }).then(res => handleResponse<{ message: string }>(res)),
 
+  /**
+   * Fetch worker payout history
+   */
   getHistory: (): Promise<WorkerPayout[]> =>
     fetch(`${API_URL}/payouts/history`, { headers: getHeaders() })
       .then(res => handleResponse<WorkerPayout[]>(res)),
 
-  // DOPUNA: Storniranje isplate (ako se pogreši dugme "Isplati")
+  /**
+   * Void a payout and return logs to PENDING status
+   */
   voidPayout: (id: string): Promise<{ message: string }> =>
     fetch(`${API_URL}/payouts/${id}`, {
       method: 'DELETE',

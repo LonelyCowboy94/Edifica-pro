@@ -17,16 +17,22 @@ export const workLogStatusEnum = pgEnum("work_log_status", ["PENDING", "SETTLED"
 // 2. CORE SYSTEM TABLES
 // ==========================================
 
-// Main company accounts
+/**
+ * Main company accounts. 
+ * baseCurrency is used for global business analytics and default values.
+ */
 export const companies = pgTable("companies", {
   id: uuid("id").defaultRandom().primaryKey(),
   name: text("name").notNull(),
   tier: tierEnum("tier").default("FREE").notNull(),
   country: text("country").notNull(), 
+  baseCurrency: text("base_currency").default("EUR").notNull(), 
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-// Platform users (Owners, Admins, Foremen)
+/**
+ * Platform users with specific roles within a company.
+ */
 export const users = pgTable("users", {
   id: uuid("id").defaultRandom().primaryKey(),
   email: text("email").notNull().unique(),
@@ -39,6 +45,10 @@ export const users = pgTable("users", {
 // 3. HUMAN RESOURCES (WORKERS)
 // ==========================================
 
+/**
+ * Workers employed by the company. 
+ * Currency defaults to company base but can be overridden.
+ */
 export const workers = pgTable("workers", {
   id: uuid("id").defaultRandom().primaryKey(),
   companyId: uuid("company_id").references(() => companies.id, { onDelete: 'cascade' }).notNull(),
@@ -52,7 +62,7 @@ export const workers = pgTable("workers", {
   contractUntil: timestamp("contract_until"),
   bankAccount: text("bank_account").notNull(),
   hourlyRate: numeric("hourly_rate", { precision: 10, scale: 2 }).notNull(),
-  currency: text("currency").default("EUR").notNull(),
+  currency: text("currency").default("EUR").notNull(), 
   createdAt: timestamp("created_at").defaultNow(),
 });
 
@@ -73,7 +83,6 @@ export const clients = pgTable("clients", {
 export const projects = pgTable("projects", {
   id: uuid("id").defaultRandom().primaryKey(),
   name: text("name").notNull(),
-  // Cascade delete: If a client is deleted, delete all their projects
   clientId: uuid("client_id").references(() => clients.id, { onDelete: 'cascade' }), 
   status: text("status").default("OPEN").notNull(),
   companyId: uuid("company_id").references(() => companies.id, { onDelete: 'cascade' }).notNull(),
@@ -81,7 +90,7 @@ export const projects = pgTable("projects", {
 });
 
 // ==========================================
-// 5. GLOBAL MASTER PRICING (Super Admin controlled)
+// 5. GLOBAL MASTER PRICING (Super Admin)
 // ==========================================
 
 export const countries = pgTable("countries", {
@@ -120,7 +129,7 @@ export const priceItems = pgTable("price_items", {
 });
 
 // ==========================================
-// 6. CLIENT CUSTOM PRICING (Workspace specific)
+// 6. CLIENT CUSTOM PRICING
 // ==========================================
 
 export const clientPriceLists = pgTable("client_price_lists", {
@@ -171,6 +180,7 @@ export const workerPayouts = pgTable("worker_payouts", {
   totalRegularHours: doublePrecision("total_regular_hours").notNull(),
   totalOvertimeHours: doublePrecision("total_overtime_hours").notNull(),
   totalAmount: numeric("total_amount", { precision: 15, scale: 2 }).notNull(),
+  /** The currency used for this specific payout */
   currency: text("currency").default("EUR").notNull(),
   paidAt: timestamp("paid_at").defaultNow().notNull(),
   note: text("note"),
@@ -180,7 +190,6 @@ export const workLogs = pgTable("work_logs", {
   id: uuid("id").defaultRandom().primaryKey(),
   companyId: uuid("company_id").references(() => companies.id, { onDelete: 'cascade' }).notNull(),
   workerId: uuid("worker_id").references(() => workers.id, { onDelete: 'cascade' }).notNull(),
-  // Cascade delete: If a project is deleted, delete all related work logs (FIXES 500 ERROR)
   projectId: uuid("project_id").references(() => projects.id, { onDelete: 'cascade' }).notNull(),
   date: timestamp("date").notNull(),
   regularHours: doublePrecision("regular_hours").default(8).notNull(),
@@ -192,7 +201,7 @@ export const workLogs = pgTable("work_logs", {
 });
 
 // ==========================================
-// 8. DB RELATIONS (For Drizzle Queries)
+// 8. DB RELATIONS
 // ==========================================
 
 export const workLogsRelations = relations(workLogs, ({ one }) => ({
